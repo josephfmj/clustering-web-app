@@ -1,0 +1,182 @@
+#header-app{
+
+  background:url(../assets/images/Header.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 255px;
+  transition: height 2s;
+}
+
+#title-container{
+  padding-top:175px;
+  text-align: center;
+  transition: padding 2s;
+}
+#title-text{
+  margin-top: 25px;
+  transition: margin 2s;
+}
+
+#title-image>img{
+  width: 640px;
+  position: relative;
+  z-index: -2;
+  transition: width 2s;
+}
+
+#title-image{
+  margin-top: -25px;
+  transition: margin 2s;
+}
+
+#title-app{
+  color: #A5A4A4;
+  font-size:120px;
+  font-family: 'Berlin Sans FB';
+  transition: font-size 2s;
+}
+
+#main-container{
+  margin-top: 200px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#content-menu-logo{
+  text-align: center;
+}
+
+#content-menu-logo>img{
+  width: 420px;
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 1559px) and (min-width: 1070px) {
+  #title-container{
+    padding-top:165px;
+  }
+
+  #header-app{
+    height: 225px;;
+  }
+
+  #title-image{
+    margin-top: -10px;
+  }
+
+  #title-image>img{
+    width: 426px;
+  }
+
+  #title-app{
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1069px) and (min-width: 825px) {
+  #title-container{
+    padding-top:145px;
+  }
+
+  #header-app{
+    height: 180px;;
+  }
+
+  #title-text{
+    margin-top: 10px;
+  }
+
+  #title-image{
+    margin-top: -15px;
+  }
+
+  #title-image>img{
+    width: 320px;
+  }
+
+  #title-app{
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 824px) and (min-width: 768px) {
+  #title-container{
+    padding-top:105px;
+  }
+
+  #header-app{
+    height: 140px;;
+  }
+
+  #title-text{
+    margin-top: 0px;
+  }
+
+  #title-image{
+    margin-top: -15px;
+  }
+
+  #title-image>img{
+    width: 213px;
+  }
+
+  #title-app{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 400px) {
+  #title-container{
+    padding-top:105px;
+  }
+
+  #header-app{
+    height: 140px;;
+  }
+
+  #title-text{
+    margin-top: 0px;
+  }
+
+  #title-image{
+    margin-top: 2px;
+  }
+
+  #title-image>img{
+    width: 213px;
+  }
+
+  #title-app{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  #title-container{
+    padding-top:90px;
+  }
+
+  #header-app{
+    height: 120px;;
+  }
+
+  #title-text{
+    margin-top: 0px;
+  }
+
+  #title-image{
+    margin-top: 0px;
+  }
+
+  #title-image>img{
+    width: 144px;
+  }
+
+  #title-app{
+    font-size: 27px;
+  }
+}

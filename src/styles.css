@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css';
+@import url("https://use.typekit.net/lqe5iic.css");
+@font-face {
+  font-family: 'Berlin Sans FB';
+  src: url('assets/fonts/BRLNSR.TTF')  format('truetype');
+}
