@@ -6,10 +6,9 @@
   </div>
   <div class="row">
     <div class="col-md">
-      <select class="custom-select custom-select-lg mb-3">
+      <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedMethod" >
         <option selected disabled>seleccionar uno</option>
-        <option value="1">metodo</option>
-        <option value="2">metodo 2</option>
+        <option [ngValue]="method" *ngFor="let method of clusteringMethodList">metodo</option>
       </select>
     </div>
   </div>

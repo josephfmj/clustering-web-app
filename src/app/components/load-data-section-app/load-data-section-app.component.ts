@@ -65,6 +65,10 @@ export class LoadDataSectionAppComponent implements OnInit {
       console.log('params method ' + this.clusteringMethodSection);
       this.getMethodParams();
     }
+
+    if (this.currentView === SectionType.UPLOAD_SECTION) {
+      
+    }
   }
 
   private prepareData(data: ClusteringMethodConfig[]): void {

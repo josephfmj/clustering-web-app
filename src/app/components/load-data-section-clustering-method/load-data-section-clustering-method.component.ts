@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-load-data-section-clustering-method',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadDataSectionClusteringMethodComponent implements OnInit {
 
+  @Input()
+  clusteringMethodList: string[];
+
+  selectedMethod: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public onNext(): void {
+
+  }
+
+  public onBack(): void {
+
   }
 
 }
