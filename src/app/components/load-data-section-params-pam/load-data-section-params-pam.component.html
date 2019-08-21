@@ -1,0 +1,37 @@
+<div>
+    <div class="row">
+      <div class="col-md">
+        <h2>Seleccionar los parametros</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <select class="custom-select custom-select-lg mb-3">
+          <option selected disabled>Metodo de distancia</option>
+          <option [ngValue]="country" *ngFor="let country of countries">{{country.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Modo Swap</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="swap">verdadero
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="swap">falso
+              </label>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <input type="text" placeholder="Centros" class="form-control">
+      </div>
+    </div>
+  </div>

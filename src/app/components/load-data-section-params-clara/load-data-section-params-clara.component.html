@@ -1,0 +1,55 @@
+<div>
+    <div class="row">
+      <div class="col-md">
+        <h2>Seleccionar los parametros</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <select class="custom-select custom-select-lg mb-3" [(ngModel)]="metodoDistancia">
+          <option selected disabled>Metodo de distancia</option>
+          <option [ngValue]="distancia" *ngFor="let distancia of distancias">{{country.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Modo Pam</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pamMode">verdadero
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pamMode">falso
+              </label>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Estandarizar variables</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="stand">veradero
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="stand">falso
+              </label>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <input type="text" placeholder="Clusters" class="form-control" name="clusters" [(ngModel)]="clusters">
+        <input type="text" placeholder="Muestras" class="form-control" name="samples" [(ngModel)]="samples">
+      </div>
+    </div>
+  </div>
