@@ -6,9 +6,9 @@
     </div>
     <div class="row">
       <div class="col-md">
-        <select class="custom-select custom-select-lg mb-3">
+        <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedDistancerMethod">
           <option selected disabled>Metodo de distancia</option>
-          <option [ngValue]="country" *ngFor="let country of countries">{{country.name}}</option>
+          <option [ngValue]="distance" *ngFor="let distance of distanceMethod">{{distance}}</option>
         </select>
       </div>
     </div>
@@ -18,12 +18,12 @@
             <label for="exampleInputEmail1">Modo Swap</label>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="swap">verdadero
+                <input type="radio" class="form-check-input" name="swap" [value]="true" [(ngModel)]="swap">verdadero
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="swap">falso
+                <input type="radio" class="form-check-input" name="swap" [value]="false" [(ngModel)]="swap">falso
               </label>
             </div>
           </div>
@@ -31,7 +31,16 @@
     </div>
     <div class="row">
       <div class="col-md">
-        <input type="text" placeholder="Centros" class="form-control">
+        <input type="text" placeholder="Clusters" class="form-control" [(ngModel)]="clusters">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary" (click)="onBack($event)">Atras</button>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3">      
+          <button type="button" class="btn btn-primary" (click)="onNext($event)">Siguiente</button>
       </div>
     </div>
   </div>

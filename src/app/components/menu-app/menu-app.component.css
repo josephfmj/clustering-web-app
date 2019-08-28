@@ -14,6 +14,7 @@
   border-top-left-radius: 70px;
   border-bottom-right-radius: 70px;
   width: 358px;
+  cursor: pointer;
 }
 
 .menu-item>div{

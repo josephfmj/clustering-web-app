@@ -7,9 +7,23 @@
   <div class="row">
     <div class="col-md">
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile">
+        <input type="file" class="custom-file-input" id="customFile" [(ngModel)]="csvFile">
         <label class="custom-file-label" for="customFile">Cargar CSV</label>
       </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="resultVisible">
+    <div class="col-md">
+        Id de Ejecucion: {{executionId}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary" (click)="onBack($event)">Atras</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">      
+        <button type="button" class="btn btn-primary" (click)="onFinish($event)">Finalizar</button>
     </div>
   </div>
 </div>

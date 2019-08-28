@@ -1,1 +1,14 @@
-<app-load-data-section-clustering-method *ngIf="currentView==SectionType.CLUSTERING_METHOD_SECTION" [clusteringMethodList]="clusteringMethodList" ></app-load-data-section-clustering-method>
+<app-load-data-section-clustering-method *ngIf="checkView('CLUSTERING_METHOD_SECTION')" [clusteringMethodList]="clusteringMethodList" [viewLoadData]="viewLoadData">
+</app-load-data-section-clustering-method>
+<app-load-data-section-params-agnes *ngIf="checkView('AGNES_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">   
+</app-load-data-section-params-agnes>
+<app-load-data-section-params-clara *ngIf="checkView('CLARA_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">
+</app-load-data-section-params-clara>
+<app-load-data-section-params-diana *ngIf="checkView('DIANA_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">
+</app-load-data-section-params-diana>
+<app-load-data-section-params-kmeans *ngIf="checkView('KMEANS_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">
+</app-load-data-section-params-kmeans>
+<app-load-data-section-params-pam *ngIf="checkView('PAM_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">
+</app-load-data-section-params-pam>
+<app-load-data-section-upload *ngIf="checkView('UPLOAD_SECTION')" [executionId]="executionId" [viewLoadData]="viewLoadData" [resultVisible]="resultVisible">
+</app-load-data-section-upload>

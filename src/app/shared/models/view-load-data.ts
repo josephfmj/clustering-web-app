@@ -4,7 +4,7 @@ export class ViewLoadData {
 
     method: string;
     decimalSeparator: string;
-    params: Map<string, string>;
-
+    params: Map<string, any>;
+    file: Blob;
     constructor() {}
 }

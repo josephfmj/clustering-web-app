@@ -6,17 +6,26 @@
   </div>
   <div class="row">
     <div class="col-md">
-      <select class="custom-select custom-select-lg mb-3">
+      <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedDistancerMethod">
         <option selected disabled>Metodo de distancia</option>
-        <option [ngValue]="country" *ngFor="let country of countries">{{country.name}}</option>
+        <option [ngValue]="distance" *ngFor="let distance of distanceMethod">{{distance}}</option>
       </select>
     </div>
   </div>
   <div class="row">
     <div class="col-md">
-      <input type="text" placeholder="Centros" class="form-control">
-      <input type="text" placeholder="iteraciones maximas" class="form-control">
-      <input type="text" placeholder="numero inicial de muestras (n-start)" class="form-control">
+      <input type="text" placeholder="Centros" class="form-control" [(ngModel)]="centers">
+      <input type="text" placeholder="iteraciones maximas" class="form-control" [(ngModel)]="iter_max">
+      <input type="text" placeholder="numero inicial de muestras (n-start)" class="form-control" [(ngModel)]="nstart"> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary" (click)="onBack($event)">Atras</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">      
+        <button type="button" class="btn btn-primary" (click)="onNext($event)">Siguiente</button>
     </div>
   </div>
 </div>

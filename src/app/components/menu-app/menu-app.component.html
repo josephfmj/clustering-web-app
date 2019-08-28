@@ -1,31 +1,42 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-10">
-      <div id="menu-container">
-        <div id="menu-title-wrap" class="menu-item-wrap">
-          <div id="menu-title" class="menu-item"><div>ACCIONES</div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-10">
+          <div id="menu-container">
+            <div id="menu-title-wrap" class="menu-item-wrap">
+              <div id="menu-title" class="menu-item"><div>ACCIONES</div>
+              </div>
+            </div>
+            <div id="menu-search-wrap" class="menu-item-wrap">
+              <div id="menu-search" class="menu-item" (click)="chekResult($event)">
+                <div>EJECUCIONES PREVIAS</div>
+              </div>
+            </div>
+            <div id="menu-load-wrap" class="menu-item-wrap">
+              <div id="menu-load" class="menu-item" (click)="loadData($event)">
+                <div>CARGAR DATOS</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="menu-search-wrap" class="menu-item-wrap">
-          <div id="menu-search" class="menu-item">
-            <div>EJECUCIONES PREVIAS</div>
-          </div>
-        </div>
-        <div id="menu-load-wrap" class="menu-item-wrap">
-          <div id="menu-load" class="menu-item">
-            <div>CARGAR DATOS</div>
-          </div>
+        <div class="col-md-2">
+            <ul id="progress">
+                <li><div class="node blue"></div></li>
+                <li><div class="divider grey"></div></li>
+                <li><div class="node grey"></div></li>
+                <li><div class="divider grey"></div></li>
+                <li><div class="node grey"></div></li>
+            </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-2">
-        <ul id="progress">
-            <li><div class="node blue"></div></li>
-            <li><div class="divider grey"></div></li>
-            <li><div class="node grey"></div></li>
-            <li><div class="divider grey"></div></li>
-            <li><div class="node grey"></div></li>
-        </ul>
+    <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+              <app-menu-content [content]="content"></app-menu-content>
+          </div>
+        </div>
     </div>
   </div>
 </div>

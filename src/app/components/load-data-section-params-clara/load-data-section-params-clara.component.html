@@ -52,4 +52,13 @@
         <input type="text" placeholder="Muestras" class="form-control" name="samples" [(ngModel)]="samples">
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary" (click)="onBack($event)">Atras</button>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3">      
+          <button type="button" class="btn btn-primary" (click)="onNext($event)">Siguiente</button>
+      </div>
+    </div>
   </div>

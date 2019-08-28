@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,6 @@ import { LoadDataSectionParamsClaraComponent } from './components/load-data-sect
 @NgModule({
   declarations: [
     AppComponent,
-    HttpClientModule,
     MenuAppComponent,
     LoadDataSectionAppComponent,
     SearchDataSectionAppComponent,
@@ -43,8 +43,10 @@ import { LoadDataSectionParamsClaraComponent } from './components/load-data-sect
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
