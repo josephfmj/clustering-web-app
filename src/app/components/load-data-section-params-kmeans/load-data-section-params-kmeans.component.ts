@@ -37,13 +37,15 @@ export class LoadDataSectionParamsKmeansComponent implements OnInit {
 
   public onNext(event): void {
 
-    const params = new Map<string, any>();
-    params.set(KmeansFields.DISTANCE_METHOD, this.centers);
-    params.set(KmeansFields.DISTANCE_METHOD, this.selectedDistancerMethod);
-    params.set(KmeansFields.ITER_MAX, this.iter_max);
-    params.set(KmeansFields.NSTART, this.nstart);
+    const params = {};
+    console.log('k: ' + KmeansFields.CENTERS + ' value: ' +  this.centers);
+    params[KmeansFields.CENTERS] = this.centers;
+    params[KmeansFields.DISTANCE_METHOD] = this.selectedDistancerMethod;
+    params[KmeansFields.ITER_MAX] = this.iter_max;
+    params[KmeansFields.NSTART] = this.nstart;
+    console.log('kmeas params-- ' + JSON.stringify(params));
     this.viewLoadData.params = params;
-
+    console.log('kmeas data-- ' + JSON.stringify(this.viewLoadData));
     this.loadDataService.setViewData(this.viewLoadData);
     this.viewHelperService.setViewData(SectionType.UPLOAD_SECTION);
   }

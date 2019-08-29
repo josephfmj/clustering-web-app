@@ -21,7 +21,6 @@ export class LoadDataSectionAppComponent implements OnInit {
   viewHelperService: ViewDisplayHelperService;
   viewDataService: ViewClusteringDataService;
   requestBuilder: FormDataBuilderUtilService;
-  viewObservable: Observable<SectionType>;
   clusteringMethodSection: SectionType;
   clusteringUploadSection: boolean;
   currentView: SectionType = SectionType.CLUSTERING_METHOD_SECTION;
@@ -45,26 +44,28 @@ export class LoadDataSectionAppComponent implements OnInit {
       this.viewHelperService = viewHelperService;
       this.viewDataService = viewDataService;
       this.requestBuilder = requestBuilder;
-      this.viewObservable = this.viewHelperService.getViewDisplayHelper();
+
+      this.viewLoadData = new ViewLoadData();
+      this.clusteringHttpService
+      .getAllClusteringMehtod(ServiceUrl.CLUSTERING_METHODS)
+      .subscribe( data => this.prepareData(data));
+
+      this.viewDataService
+      .getViewClustering()
+      .subscribe( data => {
+        console.log('this' + data);
+        this.setLoadData(data); });
+
+      this.viewHelperService
+      .getViewDisplayHelper()
+      .subscribe(data => this.resolveView(data));
+
       this.currentView = SectionType.CLUSTERING_METHOD_SECTION;
       this.resultVisible = false;
-      this.viewLoadData = new ViewLoadData();
 
   }
 
   ngOnInit() {
-    this.suscripton1 = this.clusteringHttpService
-    .getAllClusteringMehtod(ServiceUrl.CLUSTERING_METHODS)
-    .subscribe( data => this.prepareData(data));
-
-    this.suscripton2 = this.viewDataService
-    .getViewClustering()
-    .subscribe( data => { 
-      console.log('this' + data);
-      this.setLoadData(data); });
-
-    this.suscripton3 =  this.viewObservable
-    .subscribe(data => this.resolveView(data));
   }
 
 
@@ -72,16 +73,17 @@ export class LoadDataSectionAppComponent implements OnInit {
 
     if (section === SectionType.SEND_DATA) {
       const clusteringRequest = new ClusteringRequest();
+      console.log(JSON.stringify(this.viewLoadData));
       clusteringRequest.data = this.viewLoadData.params;
+      clusteringRequest.data['METHOD_NAME'] = this.viewLoadData.method;
       clusteringRequest.csvFile = this.viewLoadData.file;
+      console.log(JSON.stringify(clusteringRequest));
       const formData = this.requestBuilder.buildClusteringFormDataRequest(clusteringRequest);
-      const url = ServiceUrl.SEND_CLUSTERING_DATA + this.viewLoadData.method;
-
       this.clusteringHttpService
-      .sendClusteringData(url, formData)
+      .sendClusteringData(ServiceUrl.SEND_CLUSTERING_DATA, formData)
       .subscribe(response => {
         console.log(response);
-        this.executionId = response;
+        this.executionId = response.executionId;
         this.resultVisible = true;
       });
 
@@ -124,11 +126,13 @@ export class LoadDataSectionAppComponent implements OnInit {
   }
 
   private setLoadData(data: ViewLoadData): void {
-
+    console.log('mi data-- ' + JSON.stringify(this.viewLoadData));
+    console.log('this data-- ' + JSON.stringify(data));
     this.viewLoadData.method = data.method;
     this.viewLoadData.decimalSeparator = data.decimalSeparator;
     this.viewLoadData.params = data.params;
     this.viewLoadData.file = data.file;
+    console.log('set mi data-- ' + JSON.stringify(this.viewLoadData));
   }
 
   private checkView(type: string): boolean {

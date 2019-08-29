@@ -8,13 +8,12 @@ import { SectionType } from '../models/section-type.enum';
 export class ViewDisplayHelperService {
 
   private displayHelperType = new BehaviorSubject<SectionType>(SectionType.DEFAULT);
-  private observableHelperType = this.displayHelperType.asObservable();
 
   constructor() {
   }
 
-  getViewDisplayHelper(): Observable<SectionType> {
-    return this.observableHelperType;
+  getViewDisplayHelper(): BehaviorSubject<SectionType> {
+    return this.displayHelperType;
   }
 
   setViewData(data: SectionType): void {

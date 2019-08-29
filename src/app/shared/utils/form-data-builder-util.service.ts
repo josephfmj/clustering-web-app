@@ -10,9 +10,11 @@ export class FormDataBuilderUtilService {
 
   public buildClusteringFormDataRequest(request: ClusteringRequest): FormData {
     const data: FormData = new FormData();
-    data.append('clusteringData', JSON.stringify(request.data));
+    const params = {};
+    params['params'] = request.data;
+    data.append('clusteringData', JSON.stringify(params));
     data.append('csvFile', request.csvFile);
-
+    console.log('file ' + request.csvFile);
     return data;
   }
 }

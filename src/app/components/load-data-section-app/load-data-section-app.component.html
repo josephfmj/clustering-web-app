@@ -1,5 +1,7 @@
 <app-load-data-section-clustering-method *ngIf="checkView('CLUSTERING_METHOD_SECTION')" [clusteringMethodList]="clusteringMethodList" [viewLoadData]="viewLoadData">
 </app-load-data-section-clustering-method>
+<app-load-data-section-decimal-operator *ngIf="checkView('DECIMAL_OPERATOR_SECTION')" [viewLoadData]="viewLoadData">
+</app-load-data-section-decimal-operator>
 <app-load-data-section-params-agnes *ngIf="checkView('AGNES_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">   
 </app-load-data-section-params-agnes>
 <app-load-data-section-params-clara *ngIf="checkView('CLARA_PARAMS_SECTION')" [methodParams]="selectedClusterigMethodParams" [viewLoadData]="viewLoadData">

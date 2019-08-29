@@ -1,6 +1,6 @@
 export class ClusteringRequest {
 
-    data: Map<string, any>;
+    data: Object;
     csvFile: Blob;
 
     constructor() {}

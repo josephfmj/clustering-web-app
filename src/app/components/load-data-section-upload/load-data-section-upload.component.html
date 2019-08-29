@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md">
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile" [(ngModel)]="csvFile">
+        <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
         <label class="custom-file-label" for="customFile">Cargar CSV</label>
       </div>
     </div>

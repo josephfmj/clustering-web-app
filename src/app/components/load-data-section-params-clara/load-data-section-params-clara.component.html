@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md">
         <select class="custom-select custom-select-lg mb-3" [(ngModel)]="metodoDistancia">
-          <option selected disabled>Metodo de distancia</option>
+          <option [ngValue]="undefined" hidden>Metodo de distancia</option>
           <option [ngValue]="distancia" *ngFor="let distancia of distancias">{{country.name}}</option>
         </select>
       </div>

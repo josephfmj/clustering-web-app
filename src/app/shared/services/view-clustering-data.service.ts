@@ -7,13 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class ViewClusteringDataService {
 
-  private viewClusteringDataSubject = new BehaviorSubject<ViewLoadData>(null);
-  private viewClusteringDataObservable = this.viewClusteringDataSubject.asObservable();
+  private viewClusteringDataSubject = new BehaviorSubject<ViewLoadData>(new ViewLoadData());
 
   constructor() { }
 
-  public getViewClustering(): Observable<ViewLoadData> {
-    return this.viewClusteringDataObservable;
+  public getViewClustering(): BehaviorSubject<ViewLoadData> {
+    return this.viewClusteringDataSubject;
   }
 
   public setViewData(data: ViewLoadData): void {

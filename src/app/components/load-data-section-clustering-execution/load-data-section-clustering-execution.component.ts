@@ -30,8 +30,10 @@ export class LoadDataSectionClusteringExecutionComponent implements OnInit {
       URL.revokeObjectURL(this.fileUrl);
     }
 
+    const url = ServiceUrl.DOWNLOAD_CLUSTERING_EXECUTION + this.executionId;
+    console.log('url check : ' + url);
     this.httpService
-    .downLoadClusteringExecution(ServiceUrl.DOWNLOAD_CLUSTERING_EXECUTION + this.executionId)
+    .downLoadClusteringExecution(url)
     .subscribe( data => {
       console.log(data);
       this.fileUrl = URL.createObjectURL(data);

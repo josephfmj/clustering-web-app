@@ -18,7 +18,7 @@ export class LoadDataSectionUploadComponent implements OnInit {
   @Input()
   resultVisible: boolean;
 
-  csvFile: File;
+  csvFile: any[];
   loadDataService: ViewClusteringDataService;
   viewHelperService: ViewDisplayHelperService;
 
@@ -31,11 +31,13 @@ export class LoadDataSectionUploadComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onFileChange(event): void {
+    this.csvFile = event.target.files;
+  }
+
   public onFinish(event): void {
 
-    const file = (this.csvFile as Blob);
-    console.log('csvFile type: ' + this.csvFile.type);
-    console.log('csvFile size: ' +  this.csvFile.size);
+    const file = (this.csvFile[0] as Blob);
     console.log('BlobFile type: ' + file.type);
     console.log('BlobFile size: ' + file.size);
     this.viewLoadData.file = file;

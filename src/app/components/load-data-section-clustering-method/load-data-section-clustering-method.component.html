@@ -6,18 +6,17 @@
   </div>
   <div class="row">
     <div class="col-md">
-      <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedMethod" >
-        <option selected disabled>seleccionar uno</option>
-        <option [ngValue]="method" *ngFor="let method of clusteringMethodList">metodo</option>
+      <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedMethod">
+        <option [ngValue]="undefined" hidden>Seleccionar uno</option>
+        <option [ngValue]="method" *ngFor="let method of clusteringMethodList">{{method}}</option>
       </select>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
-      <button type="button" class="btn btn-primary" (click)="onNext($event)">Atras</button>
-    </div>
+    <div class="col-md-3"></div>
     <div class="col-md-6"></div>
     <div class="col-md-3">
+      <button type="button" class="btn btn-primary" (click)="onNext($event)">Siguiente</button>
     </div>
   </div>
 </div>

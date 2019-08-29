@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md">
         <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedDistancerMethod">
-          <option selected disabled>Metodo de distancia</option>
+          <option [ngValue]="undefined" hidden>Metodo de distancia</option>
           <option [ngValue]="distance" *ngFor="let distance of distanceMethod">{{distance}}</option>
         </select>
       </div>
@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md">
           <select class="custom-select custom-select-lg mb-3" [(ngModel)]="selectedClusterMethod">
-            <option selected disabled>Metodo de cluster</option>
+            <option [ngValue]="undefined" hidden>Metodo de cluster</option>
             <option [ngValue]="method" *ngFor="let method of clusterMethod">{{method}}</option>
           </select>
         </div>
